@@ -1,6 +1,6 @@
 class LoginPage {
 	buka() {
-		cy.visit(Cypress.env("BASE_URL"));
+		cy.visit(Cypress.env("CYPRESS_BASE_URL"));
 	}
 
 	isiUsername(username) {

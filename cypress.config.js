@@ -16,9 +16,9 @@ module.exports = defineConfig({
 			on("file:preprocessor", bundler);
 			addCucumberPreprocessorPlugin(on, config);
 
-			config.env.BASE_URL = process.env.BASE_URL;
-			config.env.STANDARD_USER = process.env.STANDARD_USER;
-			config.env.STANDARD_PASS = process.env.STANDARD_PASS;
+			config.env.CYPRESS_BASE_URL = process.env.CYPRESS_BASE_URL;
+			config.env.CYPRESS_STANDARD_USER = process.env.CYPRESS_STANDARD_USER;
+			config.env.CYPRESS_STANDARD_PASS = process.env.CYPRESS_STANDARD_PASS;
 
 			return config;
 		},
