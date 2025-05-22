@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given("User sudah login dan buka halaman keranjang dengan produk", () => {
+Given("Pengguna sudah login dan buka halaman keranjang dengan produk", () => {
 	cy.visit("https://www.saucedemo.com/");
 	cy.get('[data-test="username"]').type("standard_user");
 	cy.get('[data-test="password"]').type("secret_sauce");
@@ -15,13 +15,13 @@ Given("User sudah login dan buka halaman keranjang dengan produk", () => {
 	cy.get(".shopping_cart_link").click();
 });
 
-When("User klik tombol checkout", () => {
+When("Pengguna klik tombol checkout", () => {
 	cy.get('[data-test="checkout"]').click();
 	cy.url().should("include", "/checkout-step-one.html");
 });
 
 When(
-	"User isi info checkout dengan {string}, {string}, {string}",
+	"Pengguna isi info checkout dengan {string}, {string}, {string}",
 	(firstName, lastName, zip) => {
 		if (firstName !== "") {
 			cy.get('[data-test="firstName"]').type(firstName);
@@ -36,14 +36,14 @@ When(
 	}
 );
 
-When("User selesaikan pembelian", () => {
+When("Pengguna selesaikan pembelian", () => {
 	cy.get('[data-test="finish"]').click();
 });
 
-Then("User lihat pesan sukses {string}", (msg) => {
+Then("Pengguna lihat pesan sukses {string}", (msg) => {
 	cy.get(".complete-header").should("contain", msg);
 });
 
-Then("User lihat pesan error {string}", (msg) => {
+Then("Pengguna lihat pesan error {string}", (msg) => {
 	cy.get('[data-test="error"]').should("contain", msg);
 });
